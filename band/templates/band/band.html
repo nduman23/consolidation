@@ -1,0 +1,21 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+{% include 'shared/navbar.html' %}
+<main>
+
+  <h1>Bands</h1>
+  <div class="bands">
+    {% if bands %}
+      {% for band in bands %}
+      <div class="band">
+        <h2>{{ band.name }}</h2>
+        <img src="/images/{{ band.image }}" alt="{{ band.name }}" width="300" height="300"/>
+        <p>{{ band.description }}</p>
+      </div>
+        {% endfor %}
+      {% else %}
+      <p>There are no bands yet</p>
+      {% endif %}
+  </div>
+</main>
+ {% endblock %}
